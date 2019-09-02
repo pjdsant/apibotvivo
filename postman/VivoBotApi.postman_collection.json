@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "333b06bd-2974-4f1a-93b0-626d46dceba9",
+		"name": "VivoBotApi",
+		"description": "Metodos desenvolvidos para testes da Api de Bot da Vivo.\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bot",
+			"item": [
+				{
+					"name": "Get All Bots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1973/bot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"bot"
+							]
+						},
+						"description": "Retorna todos os bots criados e armazenados no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Get an Bot by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1973/bot/5d6c4cbbcfe8aca50b9ab6ee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"bot",
+								"5d6c4cbbcfe8aca50b9ab6ee"
+							]
+						},
+						"description": "Retorna um Bot do banco de dados de acordo com o Id informado."
+					},
+					"response": []
+				},
+				{
+					"name": "Create an Bot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"id\": \"36b9f842-ee97-11e8-9443-0242ac120002\",\n\"name\": \"Aureo\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:1973/bot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"bot"
+							]
+						},
+						"description": "Cria um bot com o id e nome, na base de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Update an Bot by Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Paulinho\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:1973/bot/5d6c4cbbcfe8aca50b9ab6ee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"bot",
+								"5d6c4cbbcfe8aca50b9ab6ee"
+							]
+						},
+						"description": "Atualiza no banco de dados um bot de acordo com o Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an Bot by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1973/bot/5d6c516ccfe8aca50b9ab6f0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"bot",
+								"5d6c516ccfe8aca50b9ab6f0"
+							]
+						},
+						"description": "Deleta do banco de dados um bot de acordo com o id informado."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Request All Messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1973/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"message"
+							]
+						},
+						"description": "Retorna todas as mensagens armazenadas no Banco de Dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Request a Messages by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1973/message/5d6c2cdc3d1ac6867e6dd6de",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"message",
+								"5d6c2cdc3d1ac6867e6dd6de"
+							]
+						},
+						"description": "Retorna todas as mensagens armazenadas no banco de dados."
+					},
+					"response": []
+				},
+				{
+					"name": "Request a Message by Conversational Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1973/message/conversational/7665ada8-3448-4acd-a1b8-d688e68fe0b1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"message",
+								"conversational",
+								"7665ada8-3448-4acd-a1b8-d688e68fe0b1"
+							]
+						},
+						"description": "Retorna uma determinada de acordo com o conversationalId."
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"conversationId\": \"7665ada8-7777-4acd-a1b7-d688e68ze1a2\",\n   \"timestamp\": \"2018-11-16T23:30:52.6917722Z\",\n   \"from\": \"36b9f842-ee97-11e8-9443-0242ac120002\",\n   \"to\": \"16edd3b3-3f75-40df-af07-2a3813a79ce9\",\n   \"text\": \"Ola sou o robo da Vivo?\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:1973/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1973",
+							"path": [
+								"message"
+							]
+						},
+						"description": "Cria uma mensagem e armazena no banco de dados."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
